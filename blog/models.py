@@ -17,6 +17,7 @@ class Post(models.Model):
   title = models.TextField(max_length=100)
   slug = models.SlugField()
   tags = models.ManyToManyField(Tag, related_name="posts")
+  summary = models.TextField(max_length=100, null=True)
 
   def __str__(self):
     return self.title
